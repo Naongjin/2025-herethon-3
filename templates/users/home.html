@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>홈</title>
+</head>
+<body>
+    <h1>홈페이지입니다 🎉</h1>
+
+    {% if user.is_authenticated %}
+        <p>안녕하세요, {{ user.username }}님!</p>
+        <a href="{% url 'users:logout' %}">로그아웃</a>
+    {% else %}
+        <a href="{% url 'users:login' %}">로그인</a> |
+        <a href="{% url 'users:signup' %}">회원가입</a>
+    {% endif %}
+</body>
+</html>
