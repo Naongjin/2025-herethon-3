@@ -1,4 +1,5 @@
 #Container {
+  margin: 0 auto;
   width: 375px;
   height: 812px;
   background: #fff;
@@ -10,7 +11,7 @@
 
 header {
   width: 100%;
-  padding: 9 * px 0px;
+  padding: 9px 0px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -51,19 +52,21 @@ header {
   margin-top: 50px;
   margin-bottom: 16px;
 }
-#InputBox {
+.InputBox {
   display: flex;
   width: 343px;
   height: 55px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: none;
-  outline: none;
   background-color: transparent;
   margin-bottom: 20px;
   border-radius: 10px;
   border: 1px solid #bfbfbf;
+  transition: opacity 0.1s ease;
+}
+.InputBox.show {
+  border: 1px solid var(--Red-Primary, #ff5b4d);
 }
 input {
   display: flex;
@@ -119,6 +122,7 @@ button {
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.045px;
 }
+
 #Error {
   color: var(--Red-Primary, #ff5b4d);
   text-align: start;
@@ -133,6 +137,11 @@ button {
 
   margin-top: 5px;
   position: absolute;
-  left: 18px;
-  top: 340px;
+  left: 20px;
+  top: 355px;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+#Error.show {
+  opacity: 1;
 }
